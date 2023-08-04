@@ -4,9 +4,9 @@ SolidJS and ReactJS are both popular JavaScript libraries used for building user
 
 Here are some key differences:
 
-1. **Reactivity Model**: React uses a virtual DOM diffing technique. When a component's state changes, React creates a new virtual representation of the UI and then compares this with the current one, making the minor possible updates to the actual DOM. On the other hand, SolidJS uses fine-grained reactivity based on a compiler. It directly updates the DOM without diffing, leading to optimized and efficient updates. 
+1. **Reactivity Model**: React uses a virtual DOM diffing technique. When a component's state changes, React creates a new virtual representation of the UI and then compares this with the current one, making the minor possible updates to the actual DOM. On the other hand, SolidJS uses fine-grained reactivity based on a compiler. It directly updates the DOM without diffing, leading to optimized and efficient updates.
 
-2. **Performance**: Because of its fine-grained reactivity model and the fact that it avoids the virtual DOM, SolidJS can be faster than React. It's generally considered more performant due to the less computation needed for UI updates. 
+2. **Performance**: Because of its fine-grained reactivity model and the fact that it avoids the virtual DOM, SolidJS can be faster than React. It's generally considered more performant due to the less computation needed for UI updates.
 
 3. **Size**: SolidJS has a smaller footprint than React. The smaller bundle size leads to quicker load times and better performance and user experience.
 
