@@ -1,27 +1,67 @@
-import type { Component } from 'solid-js';
+import { Component, createSignal } from "solid-js";
 
-import logo from './logo.svg';
-import styles from './App.module.css';
+const Registration: Component = () => {
+  const [email, setEmail] = createSignal("");
+  const [password, setPassword] = createSignal("");
+  const [name, setName] = createSignal("");
+  const [dob, setDob] = createSignal("");
 
-const App: Component = () => {
+  const handleSubmit = (event: Event) => {
+    event.preventDefault();
+    console.log({
+      email: email(),
+      password: password(),
+      name: name(),
+      dob: dob(),
+    });
+  };
+
   return (
-    <div class={styles.App}>
-      <header class={styles.header}>
-        <img src={logo} class={styles.logo} alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
-      </header>
+    <div>
+      <h1>Registration</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Email:
+          <input
+            type="email"
+            value={email()}
+            onInput={(e: Event) =>
+              setEmail((e.target as HTMLInputElement).value)
+            }
+          />
+        </label>
+        <label>
+          Password:
+          <input
+            type="password"
+            value={password()}
+            onInput={(e: Event) =>
+              setPassword((e.target as HTMLInputElement).value)
+            }
+          />
+        </label>
+        <label>
+          Name:
+          <input
+            type="text"
+            value={name()}
+            onInput={(e: Event) =>
+              setName((e.target as HTMLInputElement).value)
+            }
+          />
+        </label>
+        <label>
+          Date of Birth:
+          <input
+            type="date"
+            value={dob()}
+            onInput={(e: Event) => setDob((e.target as HTMLInputElement).value)}
+          />
+        </label>
+        <button type="submit">Register</button>
+      </form>
     </div>
   );
 };
 
-export default App;
+export default Registration;
